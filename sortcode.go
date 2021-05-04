@@ -10,6 +10,7 @@ import (
 )
 
 func readLines(file string) (linesArray []string, err error) {
+	const delim = '\n'
 	f, err := os.Open(file)
 	if err != nil {
 		return nil, err
@@ -17,7 +18,6 @@ func readLines(file string) (linesArray []string, err error) {
 	defer f.Close()
 	r := bufio.NewReader(f)
 	for {
-		const delim = '\n'
 		line, err := r.ReadString(delim)
 		if err == nil || len(line) > 0 {
 			if err != nil {
