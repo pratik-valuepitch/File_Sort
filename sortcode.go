@@ -54,7 +54,7 @@ func writeLines(lines []string) (err error) {
 
 func main() {
 	now := time.Now()
-	linesArray, err := readLines(`sample.txt`)
+	linesArray, err := readLines(`../../sort-challenge/sample_large.txt`)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
